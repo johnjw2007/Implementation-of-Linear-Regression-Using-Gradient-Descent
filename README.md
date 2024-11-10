@@ -24,6 +24,7 @@ RegisterNumber:  24013517
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+
 def linear_regression (X1, y, learning_rate=0.01, num_iters=1000):
     X=np.c_[np.ones (len(X1)),X1]
     theta=np.zeros(X.shape[1]).reshape(-1,1)
@@ -32,6 +33,7 @@ def linear_regression (X1, y, learning_rate=0.01, num_iters=1000):
         errors=(predictions-y).reshape(-1,1)
         theta--learning_rate*(1/len(X1))*X.T.dot(errors)
     return theta
+    
 data=pd.read_csv('50_startups.csv', header=None)
 X=(data.iloc[1:, :-2].values)
 X1=X.astype(float)
