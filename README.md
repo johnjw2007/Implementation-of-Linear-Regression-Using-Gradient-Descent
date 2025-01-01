@@ -35,7 +35,6 @@ def linear_regression (X1, y, learning_rate=0.01, num_iters=1000):
         errors=(predictions-y).reshape(-1,1)
         theta--learning_rate*(1/len(X1))*X.T.dot(errors)
     return theta
-    
 data=pd.read_csv('50_startups.csv', header=None)
 X=(data.iloc[1:, :-2].values)
 X1=X.astype(float)
@@ -43,7 +42,6 @@ scaler=StandardScaler()
 y=(data.iloc[1:,-1].values).reshape(-1,1)
 X1_Scaled=scaler.fit_transform(X1)
 Y1_Scaled=scaler.fit_transform(y)
-
 theta=linear_regression (X1_Scaled, Y1_Scaled)
 new_data=np.array([165349.2,136897.8,471784.1]).reshape(-1,1)
 new_Scaled=scaler.fit_transform(new_data)
