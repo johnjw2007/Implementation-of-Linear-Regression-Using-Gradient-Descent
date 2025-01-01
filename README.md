@@ -24,7 +24,7 @@ RegisterNumber:  24013517
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-
+/*
 def linear_regression (X1, y, learning_rate=0.01, num_iters=1000):
     X=np.c_[np.ones (len(X1)),X1]
     theta=np.zeros(X.shape[1]).reshape(-1,1)
@@ -49,7 +49,7 @@ prediction=np.dot(np.append(1, new_Scaled), theta)
 prediction=prediction.reshape(-1,1)
 pre=scaler.inverse_transform (prediction)
 print (f"Predicted value: {pre}")
-
+*/
 ## Output:
 ![linear regression using gradient descent](sam.png)
 
